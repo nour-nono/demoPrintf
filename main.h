@@ -16,8 +16,9 @@ struct placeHolders
 placeHolders specifiers[] =
     {
         {'c', printChar},
-        {'s', printString}
-    };
+        {'s', printString},
+        {'b', printBinary},
+};
 /*first task funcs*/
 int printChar(va_list argu);
 int printString(va_list argu);
