@@ -45,7 +45,7 @@ placeHolders specifiers[] =
 		{'i', printInteger},
 		{'b', printBinary},
 		{'u', printUnsigned},
-		{'o', print0ctal},
+		{'o', printOctal},
 		{'x', printHex},
 		{'X', printHEX},
 		{'S', printVisibleString},
@@ -61,7 +61,7 @@ int printInteger(va_list argu);
 int printBinary(va_list argu);
 /*3rd task function*/
 int printUnsigned(va_list argu);
-int print0ctal(va_list argu);
+int printOctal(va_list argu);
 int printHex(va_list argu);
 int printHEX(va_list argu);
 /*4th task function*/
