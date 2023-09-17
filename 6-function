@@ -1,0 +1,18 @@
+int convertUnsignedToOct(unsigned int n)
+{
+        int x, j = 0;
+        char c;
+        if ((n / 8) > 0)
+                j = convertUnsignedToOct(n / 8);
+        x = n % 8;
+        c = x + 48;
+        write(1, &c, 1);
+        j++;
+        return (j);
+}
+int printOctal(va_list argu)
+{
+        unsigned int n = va_arg(argu, unsigned int);
+        int j = convertUnsignedToOct(n);
+        return (n);
+}
