@@ -25,7 +25,7 @@ int printInteger(va_list argu)
 		c = '-', write(1, &c, 1);
 	while (i >= 0)
 	{
-		x = num / _pow(10, i);
+		x = num / _pow(i);
 		if (is_negative == 2 && i == 0)
 		{
 			c = (x % 10) + '1';
