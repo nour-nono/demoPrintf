@@ -15,7 +15,7 @@
  * @b : the exponent number
  *
  * Return: the power of base number
-*/
+ */
 
 int _pow(int a, int b)
 {
@@ -31,27 +31,32 @@ int _pow(int a, int b)
 typedef struct placeHolders placeHolders;
 struct placeHolders
 {
-    char sp;
-    int (*funcPtr)(va_list);
+	char sp;
+	int (*funcPtr)(va_list);
 };
 
 placeHolders specifiers[] =
-    {
-        {'c', printChar},
-        {'s', printString},
-	{'d', printInteger},
-	{'i', printInteger},
-	{'u', printUnsigned},
-	{'o', print0ctal},
-	{'x', printHex},
-	{'X', printHEX}
-    };
+	{
+		{'c', printChar},
+		{'s', printString},
+		{'d', printInteger},
+		{'i', printInteger},
+		{'u', printUnsigned},
+		{'o', print0ctal},
+		{'x', printHex},
+		{'X', printHEX}};
 
-/*first task funcs*/
+/*1st task funcs*/
+int printPercentage();
 int printChar(va_list argu);
 int printString(va_list argu);
-int printPercentage();
-/*second task function*/
+/*2nd task function*/
 int printInteger(va_list argu);
+/*3rd task function*/
+int printUnsigned(va_list argu);
+int print0ctal(va_list argu);
+int printHex(va_list argu);
+int printHEX(va_list argu);
+
 
 #endif
