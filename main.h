@@ -1,9 +1,11 @@
 #ifndef MAIN_H_
 #define MAIN_H_
+
 #include <unistd.h>
 #include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdarg.h>
 
 #define buff_size 1024
@@ -41,22 +43,29 @@ placeHolders specifiers[] =
 		{'s', printString},
 		{'d', printInteger},
 		{'i', printInteger},
+		{'b', printBinary},
 		{'u', printUnsigned},
 		{'o', print0ctal},
 		{'x', printHex},
-		{'X', printHEX}};
+		{'X', printHEX},
+		{'S', printVisibleString},
+};
 
-/*1st task funcs*/
+/*0 task funcs*/
 int printPercentage();
 int printChar(va_list argu);
 int printString(va_list argu);
-/*2nd task function*/
+/*1st task function*/
 int printInteger(va_list argu);
+/*2nd task function*/
+int printBinary(va_list argu);
 /*3rd task function*/
 int printUnsigned(va_list argu);
 int print0ctal(va_list argu);
 int printHex(va_list argu);
 int printHEX(va_list argu);
 
+/*5th task function*/
+int printVisibleString(va_list argu);
 
 #endif
