@@ -37,7 +37,7 @@ int printUnsigned(va_list argu)
 
 int convertUnsignedToOct(unsigned int num)
 {
-        int x, j = 0;
+        int j = 0;
         char c;
 
         if ((num / 8) > 0)
