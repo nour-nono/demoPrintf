@@ -64,6 +64,7 @@ int printUnsigned(va_list argu);
 int print0ctal(va_list argu);
 int printHex(va_list argu);
 int printHEX(va_list argu);
+/*4th task function*/
 
 /*5th task function*/
 int printVisibleString(va_list argu);
