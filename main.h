@@ -21,14 +21,15 @@
  */
 
 int _pow(int b)
-{ int  a = 10;
+{
+	int a = 10;
 	while (b > 1)
 	{
-	    a *= 10;
+		a *= 10;
 		b--;
 	}
 	if (b == 0)
-        a = 1;
+		a = 1;
 	return (a);
 }
 
