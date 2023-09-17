@@ -26,6 +26,7 @@ int printUnsigned(va_list argu)
                 j++;
         }
         return (j);
+}
 /**
  * convertUnsignedToOct - the function that convert a number to octal base
  *
@@ -62,5 +63,3 @@ int printOctal(va_list argu)
 
         return (j);
 }
-
-
