@@ -20,14 +20,15 @@
  * Return: the power of base number
  */
 
-int _pow(int a, int b)
-{
-	int x = a;
+int _pow(int b)
+{ int  a = 10;
 	while (b > 1)
 	{
-		a *= x;
+	    a *= 10;
 		b--;
 	}
+	if (b == 0)
+        a = 1;
 	return (a);
 }
 
