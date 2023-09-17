@@ -34,6 +34,6 @@ int printVisibleString(va_list argu)
                         st2[j] = st[i], ++j;
         }
         len = strlen(st2);
-        write(1, st2, len);
+        handleBuffer(len, st2);
         return (len);
 }

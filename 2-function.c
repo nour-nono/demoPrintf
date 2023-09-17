@@ -3,11 +3,11 @@
 int printBinary(va_list argu)
 {
         unsigned int s = va_arg(argu, unsigned int);
-        char ch[33] = {'0'};
-        int i = 0;
+        char ch[33] = {'0'}, ch2[33];
+        int i = 0, j = 0;
         if (!s)
         {
-                write(1, ch, 1);
+                handleBuffer(1, ch);
                 return (1);
         }
         while (s)
@@ -19,7 +19,9 @@ int printBinary(va_list argu)
                 s /= 2;
                 ++i;
         }
-        ch[i] = '\0';
-        write(1, ch, i);
+        for (; i >= 0; --i, ++j)
+                ch2[j] = ch[i];
+        ch2[j] = '\0', --j;
+        handleBuffer(j, ch2);
         return (i);
 }

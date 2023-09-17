@@ -3,7 +3,7 @@
 int printChar(va_list argu)
 {
         char c = va_arg(argu, int);
-        write(1, &c, 1);
+        handleBuffer(1, &c);
         return (1);
 }
 int printString(va_list argu)
@@ -13,12 +13,12 @@ int printString(va_list argu)
         if (!st)
                 st = "(null)";
         len = strlen(st);
-        write(1, st, len);
+        handleBuffer(len, st);
         return (len);
 }
 int printPercentage()
 {
         char c = '%';
-        write(1, &c, 1);
+        handleBuffer(1, &c);
         return (1);
 }

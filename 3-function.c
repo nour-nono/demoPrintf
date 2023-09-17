@@ -21,7 +21,7 @@ int printUnsigned(va_list argu)
         {
                 x = num / _pow(10, i);
                 c = (x % 10) + '0';
-                write(1, &c, 1);
+                handleBuffer(1, &c);
                 i--;
                 j++;
         }
@@ -43,7 +43,7 @@ int convertUnsignedToOct(unsigned int num)
         if ((num / 8) > 0)
                 j =  convertUnsignedToOct(num / 8);
         c = (num % 8) + '0';
-        write(1, &c, 1);
+        handleBuffer(1, &c);
         j++;
         return (j);
 }
