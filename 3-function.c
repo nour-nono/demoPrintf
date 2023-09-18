@@ -26,20 +26,6 @@ void printUnsigned(va_list argu)
 	}
 }
 
-/**
- * printOctal - the function that prints the octal value
- *
- * @argu : the number to be printed
- *
- * Return: Nothing
-*/
-
-void printOctal(va_list argu)
-{
-	unsigned int n = va_arg(argu, unsigned int);
-
-	convertUnsignedToHex(n, '0');
-}
 
 /**
  * convertUnsignedToHex- the function that convert a number to hexadecimal
@@ -60,6 +46,20 @@ void convertUnsignedToHex(unsigned int num, char flagChar)
 	x = num % y;
 	c = (x < 10) ? (x + 48) : (x + flagChar);
 	handleBuffer(1, &c);
+}
+/**
+ * printOctal - the function that prints the octal value
+ *
+ * @argu : the number to be printed
+ *
+ * Return: Nothing
+*/
+
+void printOctal(va_list argu)
+{
+	unsigned int n = va_arg(argu, unsigned int);
+
+	convertUnsignedToHex(n, '0');
 }
 
 /**

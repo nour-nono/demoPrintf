@@ -10,8 +10,8 @@
 int handleBuffer(int a, const char *ch)
 {
 	static int iForBuffer, outputLength;
-	int iForInput = 0, sizeOfBuffer = 0;;
 	static char output[buff_size];
+	int iForInput = 0, sizeOfBuffer = 0;
 
 	if (a == -1)
 	{
@@ -20,8 +20,10 @@ int handleBuffer(int a, const char *ch)
 		return (sizeOfBuffer);
 	}
 	if (a == 1)
+	{
 		output[iForBuffer] = *ch, ++outputLength, ++iForBuffer, ++iForInput;
 		--a, output[iForBuffer] = '\0';
+	}
 	while (a--)
 	{
 		if (iForBuffer == buff_size - 1)

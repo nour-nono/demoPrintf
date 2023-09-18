@@ -57,5 +57,5 @@ placeHolders specifiers[] = {
 	{'X', printHEX},
 	{'S', printVisibleString},
 };
-
+int _printf(const char *format, ...);
 #endif
