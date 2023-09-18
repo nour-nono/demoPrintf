@@ -12,6 +12,7 @@ int handleBuffer(int a, char *ch)
 	static int iForBuffer, outputLength;
 	int iForInput = 0;
 	static char output[buff_size];
+
 	if (a == -1)
 	{
 		write(1, output, iForBuffer);
