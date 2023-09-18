@@ -1,5 +1,13 @@
 #include "main.h"
-
+/**
+ * searchInSpecfires - the function that print the unsigned value
+ *
+ * @format : the number to be printed
+ * @flag : the number to be printed
+ * @ptr : the number to be printed
+ *
+ * Return: Nothing
+*/
 void searchInSpecfires(char format, int *flag, va_list ptr)
 {
 	placeHolders specifiers[] = {
