@@ -7,17 +7,17 @@
  *
  * Return: outputLength
 */
-int handleBuffer(int a, char *ch)
+int handleBuffer(int a, const char *ch)
 {
 	static int iForBuffer, outputLength;
-	int iForInput = 0;
+	int iForInput = 0, sizeOfBuffer = 0;;
 	static char output[buff_size];
 
 	if (a == -1)
 	{
 		write(1, output, iForBuffer);
-		iForBuffer = 0;
-		return (outputLength);
+		sizeOfBuffer = outputLength; iForBuffer = 0, outputLength = 0;
+		return (sizeOfBuffer);
 	}
 	if (a == 1)
 		output[iForBuffer] = *ch, ++outputLength, ++iForBuffer, ++iForInput;
