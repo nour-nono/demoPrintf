@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, j, flag = 1;
+	int i = 0, flag = 1;
 	va_list ptr;
 
 	if (!format)
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			handleBuffer(1, &format[i]);
 		else
 		{
-			j = 0, flag = 1, ++i;
+			flag = 1, ++i;
 			while (format[i] == ' ')
 				++i;
 			if (format[i] == '\0')
