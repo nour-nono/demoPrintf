@@ -15,7 +15,7 @@ void convertCharToHex(char ch, char *st2)
     else
         st2[2] = 55 + hex;
 }
-int printVisibleString(va_list argu)
+void printVisibleString(va_list argu)
 {
     char *st = va_arg(argu, char *), st2[1024], target[5] = "\\x22";
     int len = 1, i = 0, j = 0;
@@ -35,5 +35,4 @@ int printVisibleString(va_list argu)
     }
     len = strlen(st2);
     handleBuffer(len, st2);
-    return (len);
 }

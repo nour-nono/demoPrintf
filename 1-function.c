@@ -5,39 +5,37 @@
  *
  * @argu : the number to be printed
  *
- * Return: how many digit in the number
-*/
+ * Return: Nothing
+ */
 
-int printInteger(va_list argu)
+void printInteger(va_list argu)
 {
 	int num = va_arg(argu, int);
-	int x, i, is_negative = 0, j = 0;
+	int x, i = 0, a = 0, is_negative = 0;
 	char c;
 
-	is_negative = (num < 0) ? ((num == INT_MIN) ? 2 : 1) : 0;
-	x = (num < 0) ? ((num == INT_MIN) ? num -= 1 : num * -1) : num;
-	num = x;
-	for (i = 1; x > 10; i++)
-		x /= 10;
-	i--;
+	if (num == INT_MIN)
+	{
+		num = num - 1, is_negative = 1, c = '-';
+		handleBuffer(1, &c);
+	}
+
+	if (num < 0)
+	{
+		num = -num, c = '-';
+		handleBuffer(1, &c);
+	}
 	x = num;
-	if (is_negative == 2 || is_negative == 1)
-		c = '-', write(1, &c, 1);
+	while (x >= 10)
+		x /= 10, i++;
 	while (i >= 0)
 	{
-		x = num / _pow(i);
-		if (is_negative == 2 && i == 0)
-		{
-			c = (x % 10) + '1';
-			j++;
-		}
+		a = num / pow(10, i);
+		if (i == 0 && is_negative == 1)
+			c = (a % 10) + '1';
 		else
-			c = (x % 10) + '0';
-		if (is_negative == 1 && i == 0)
-			j++;
-		write(1, &c, 1);
+			c = (a % 10) + '0';
+		handleBuffer(1, &c);
 		i--;
-		j++;
 	}
-	return (j);
 }

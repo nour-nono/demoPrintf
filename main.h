@@ -37,7 +37,7 @@ typedef struct placeHolders placeHolders;
 struct placeHolders
 {
 	char sp;
-	int (*funcPtr)(va_list);
+	void (*funcPtr)(va_list);
 };
 
 placeHolders specifiers[] =
@@ -55,21 +55,21 @@ placeHolders specifiers[] =
 };
 
 /*0 task funcs*/
-int printPercentage();
-int printChar(va_list argu);
-int printString(va_list argu);
+void printPercentage();
+void printChar(va_list argu);
+void printString(va_list argu);
 /*1st task function*/
-int printInteger(va_list argu);
+void printInteger(va_list argu);
 /*2nd task function*/
-int printBinary(va_list argu);
+void printBinary(va_list argu);
 /*3rd task function*/
-int printUnsigned(va_list argu);
-int printOctal(va_list argu);
-int printHex(va_list argu);
-int printHEX(va_list argu);
+void printUnsigned(va_list argu);
+void printOctal(va_list argu);
+void printHex(va_list argu);
+void printHEX(va_list argu);
 /*4th task function*/
 
 /*5th task function*/
-int printVisibleString(va_list argu);
+void printVisibleString(va_list argu);
 
 #endif
