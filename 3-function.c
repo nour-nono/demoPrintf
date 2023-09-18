@@ -19,7 +19,7 @@ void printUnsigned(va_list argu)
 		x /= 10;
 	while (i >= 0)
 	{
-		x = num / pow(10, i);
+		x = num / _pow(10, i);
 		c = (x % 10) + '0';
 		handleBuffer(1, &c);
 		i--;

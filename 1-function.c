@@ -7,7 +7,19 @@
  *
  * Return: Nothing
  */
+int _pow(int a, int b)
+{
+	int c = a;
 
+	if (b == 0)
+	{
+		a = 1;
+		return (a);
+	}
+	while (--b)
+		a *= c;
+	return (a);
+}
 void printInteger(va_list argu)
 {
 	int num = va_arg(argu, int), x, i = 0, a = 0, is_negative = 0;
@@ -28,7 +40,7 @@ void printInteger(va_list argu)
 		x /= 10, i++;
 	while (i >= 0)
 	{
-		a = num / pow(10, i);
+		a = num / _pow(10, i);
 		if (i == 0 && is_negative == 1)
 			c = (a % 10) + '1';
 		else

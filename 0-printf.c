@@ -6,6 +6,19 @@
  *
  * Return: integer
  */
+placeHolders specifiers[] = {
+        {'c', printChar},
+        {'s', printString},
+        {'d', printInteger},
+        {'i', printInteger},
+        {'b', printBinary},
+        {'u', printUnsigned},
+        {'o', printOctal},
+        {'x', printHex},
+        {'X', printHEX},
+        {'S', printVisibleString},
+};
+
 int _printf(const char *format, ...)
 {
 	int i = 0, j, flag = 1;

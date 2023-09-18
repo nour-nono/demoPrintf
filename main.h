@@ -10,7 +10,7 @@
 #include <math.h>
 
 #define buff_size 1024
-
+int _pow(int a, int b);
 int handleBuffer(int a, const char *ch);
 
 /*0 task funcs*/
@@ -43,19 +43,6 @@ struct placeHolders
 {
 	char sp;
 	void (*funcPtr)(va_list);
-};
-
-placeHolders specifiers[] = {
-	{'c', printChar},
-	{'s', printString},
-	{'d', printInteger},
-	{'i', printInteger},
-	{'b', printBinary},
-	{'u', printUnsigned},
-	{'o', printOctal},
-	{'x', printHex},
-	{'X', printHEX},
-	{'S', printVisibleString},
 };
 int _printf(const char *format, ...);
 #endif
