@@ -1,11 +1,10 @@
 #include "main.h"
-
 /**
- * printInteger - function that print integer if %d or %i found
+ * _pow - function that print integer if %d or %i found
  *
- * @argu : the number to be printed
- *
- * Return: Nothing
+ * @a: the number to be printed
+ * @b: int
+ * Return: int
  */
 int _pow(int a, int b)
 {
@@ -20,6 +19,13 @@ int _pow(int a, int b)
 		a *= c;
 	return (a);
 }
+/**
+ * printInteger - function that print integer if %d or %i found
+ *
+ * @argu : the number to be printed
+ *
+ * Return: Nothing
+ */
 void printInteger(va_list argu)
 {
 	int num = va_arg(argu, int), x, i = 0, a = 0, is_negative = 0;
