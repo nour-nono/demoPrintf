@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0, j, flag = 1;
 	va_list ptr;
+
 	if (!format)
 		return (-1);
 	if (*format == '\0')

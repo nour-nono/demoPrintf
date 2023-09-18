@@ -12,26 +12,12 @@
 #define buff_size 1024
 
 /**
- * _pow - function that return the power of a number
+ * struct placeHolders - just struct
  *
- * @a : the base number
- * @b : the exponent number
+ * @sp: a char
+ * @funcptr: pointer to func
  *
- * Return: the power of base number
- */
-
-int _pow(int b)
-{
-	int a = 10;
-	while (b > 1)
-	{
-		a *= 10;
-		b--;
-	}
-	if (b == 0)
-		a = 1;
-	return (a);
-}
+*/
 
 typedef struct placeHolders placeHolders;
 struct placeHolders
@@ -40,8 +26,7 @@ struct placeHolders
 	void (*funcPtr)(va_list);
 };
 
-placeHolders specifiers[] =
-{
+placeHolders specifiers[] = {
 	{'c', printChar},
 	{'s', printString},
 	{'d', printInteger},
@@ -55,7 +40,7 @@ placeHolders specifiers[] =
 };
 
 /*0 task funcs*/
-void printPercentage();
+void printPercentage(void);
 void printChar(va_list argu);
 void printString(va_list argu);
 /*1st task function*/
