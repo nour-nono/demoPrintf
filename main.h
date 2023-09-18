@@ -44,5 +44,6 @@ struct placeHolders
 	char sp;
 	void (*funcPtr)(va_list);
 };
+void searchInSpecfires(char format, int *flag, va_list ptr);
 int _printf(const char *format, ...);
 #endif

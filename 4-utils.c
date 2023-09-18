@@ -16,7 +16,7 @@ int handleBuffer(int a, const char *ch)
 	if (a == -1)
 	{
 		write(1, output, iForBuffer);
-		sizeOfBuffer = outputLength; iForBuffer = 0, outputLength = 0;
+		sizeOfBuffer = outputLength, iForBuffer = 0, outputLength = 0;
 		return (sizeOfBuffer);
 	}
 	if (a == 1)

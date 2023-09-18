@@ -6,18 +6,6 @@
  *
  * Return: integer
  */
-placeHolders specifiers[] = {
-        {'c', printChar},
-        {'s', printString},
-        {'d', printInteger},
-        {'i', printInteger},
-        {'b', printBinary},
-        {'u', printUnsigned},
-        {'o', printOctal},
-        {'x', printHex},
-        {'X', printHEX},
-        {'S', printVisibleString},
-};
 
 int _printf(const char *format, ...)
 {
@@ -45,11 +33,7 @@ int _printf(const char *format, ...)
 				printPercentage();
 				flag = 0;
 			}
-			for (; j < 10; ++j)
-			{
-				if (format[i] == specifiers[j].sp && flag)
-					specifiers[j].funcPtr(ptr), flag = 0;
-			}
+			searchInSpecfires(format[i], &flag, ptr);
 			if (flag)
 				handleBuffer(2, &format[i - 1]);
 		}
