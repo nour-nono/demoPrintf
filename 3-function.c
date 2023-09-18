@@ -10,7 +10,8 @@
 
 void printUnsigned(va_list argu)
 {
-	unsigned int num = va_arg(argu, unsigned int), x, i;
+	unsigned int num = va_arg(argu, unsigned int), x;
+	int i;
 	char c;
 
 	x = num;
