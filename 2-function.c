@@ -11,6 +11,7 @@ void printBinary(va_list argu)
 	unsigned int s = va_arg(argu, unsigned int);
 	char ch[33] = {'0'}, ch2[33];
 	int i = 0, j = 0;
+
 	if (!s)
 	handleBuffer(1, ch);
 	while (s)

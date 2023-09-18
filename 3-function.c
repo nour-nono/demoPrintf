@@ -10,19 +10,19 @@
 
 void printUnsigned(va_list argu)
 {
-        unsigned int num = va_arg(argu, unsigned int), x;
-        int i;
-        char c;
-        x = num;
-        for (i = 0; x > 10; i++)
-                x /= 10;
-        while (i >= 0)
-        {
-                x = num / pow(10, i);
-                c = (x % 10) + '0';
-                handleBuffer(1, &c);
-                i--;
-        }
+	unsigned int num = va_arg(argu, unsigned int), x, i;
+	char c;
+
+	x = num;
+	for (i = 0; x > 10; i++)
+		x /= 10;
+	while (i >= 0)
+	{
+		x = num / pow(10, i);
+		c = (x % 10) + '0';
+		handleBuffer(1, &c);
+		i--;
+	}
 }
 
 /**
@@ -35,8 +35,9 @@ void printUnsigned(va_list argu)
 
 void printOctal(va_list argu)
 {
-        unsigned int n = va_arg(argu, unsigned int);
-        convertUnsignedToHex(n, '0');
+	unsigned int n = va_arg(argu, unsigned int);
+
+	convertUnsignedToHex(n, '0');
 }
 
 /**
@@ -50,14 +51,14 @@ void printOctal(va_list argu)
 
 void convertUnsignedToHex(unsigned int num, char flagChar)
 {
-        int x, y = (flagChar != 48) ? 16 : 8;
-        char c;
+	int x, y = (flagChar != 48) ? 16 : 8;
+	char c;
 
-        if ((num / y) > 0)
-                convertUnsignedToHex((num / y), flagChar);
-        x = num % y;
-        c = (x < 10) ? (x + 48) : (x + flagChar);
-        handleBuffer(1, &c);
+	if ((num / y) > 0)
+		convertUnsignedToHex((num / y), flagChar);
+	x = num % y;
+	c = (x < 10) ? (x + 48) : (x + flagChar);
+	handleBuffer(1, &c);
 }
 
 /**
@@ -71,8 +72,9 @@ void convertUnsignedToHex(unsigned int num, char flagChar)
 
 void printHex(va_list argu)
 {
-        unsigned int n = va_arg(argu, unsigned int);
-        convertUnsignedToHex(n, 'a' - 10);
+	unsigned int n = va_arg(argu, unsigned int);
+
+	convertUnsignedToHex(n, 'a' - 10);
 }
 
 /**
@@ -85,6 +87,7 @@ void printHex(va_list argu)
 
 void printHEX(va_list argu)
 {
-        unsigned int n = va_arg(argu, unsigned int);
-        convertUnsignedToHex(n, 'A' - 10);
+	unsigned int n = va_arg(argu, unsigned int);
+
+	convertUnsignedToHex(n, 'A' - 10);
 }

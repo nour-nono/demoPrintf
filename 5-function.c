@@ -10,6 +10,7 @@
 void convertCharToHex(char ch, char *st2)
 {
 	int ascii = 0, hex = 0;
+
 	ascii = ch;
 	hex = ascii % 16;
 	if (hex < 10)
@@ -33,6 +34,7 @@ void printVisibleString(va_list argu)
 {
 	char *st = va_arg(argu, char *), st2[1024], target[5] = "\\x22";
 	int len = 1, i = 0, j = 0;
+
 	if (!st)
 		st = "(null)";
 	len = strlen(st);

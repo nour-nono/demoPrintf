@@ -10,8 +10,7 @@
 
 void printInteger(va_list argu)
 {
-	int num = va_arg(argu, int);
-	int x, i = 0, a = 0, is_negative = 0;
+	int num = va_arg(argu, int), x, i = 0, a = 0, is_negative = 0;
 	char c;
 
 	if (num == INT_MIN)
@@ -19,7 +18,6 @@ void printInteger(va_list argu)
 		num = num - 1, is_negative = 1, c = '-';
 		handleBuffer(1, &c);
 	}
-
 	if (num < 0)
 	{
 		num = -num, c = '-';

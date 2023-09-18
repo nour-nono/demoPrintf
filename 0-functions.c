@@ -9,6 +9,7 @@
 void printChar(va_list argu)
 {
 	char c = va_arg(argu, int);
+
 	handleBuffer(1, &c);
 }
 /**
@@ -22,6 +23,7 @@ void printString(va_list argu)
 {
 	char *st = va_arg(argu, char *);
 	int len = 1;
+
 	if (!st)
 		st = "(null)";
 	len = strlen(st);
@@ -32,8 +34,9 @@ void printString(va_list argu)
  *
  * Return: Nothing
 */
-void printPercentage()
+void printPercentage(void)
 {
 	char c = '%';
+
 	handleBuffer(1, &c);
 }
